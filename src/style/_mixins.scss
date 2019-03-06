@@ -1,0 +1,24 @@
+@import 'variables';
+
+@mixin medium {
+  @media screen and (min-width: #{$mediumWidth}) {
+    @content;
+  }
+}
+
+@mixin multiColumn {
+  @media screen and (min-width: #{$multiColumnWidth}) {
+    @content;
+  }
+}
+
+@mixin big {
+  @media screen and (min-width: #{$bigWidth}) {
+    @content;
+  }
+}
+
+@function rem($px, $base: $fontSize) {
+  $remSize: $px / $base;
+  @return #{$remSize}rem;
+}

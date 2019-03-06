@@ -1,0 +1,83 @@
+@import 'utils';
+
+.HeadingLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.PageHeading {
+  font-weight: 400;
+  color: $blueGrey;
+  margin-top: $margin * 1.25;
+}
+
+.Button {
+  background: $blue;
+  color: white;
+  border: 2px solid $blue;
+  padding: 0.25rem 1rem;
+  border-radius: calc(1.75rem / 2);
+  font-weight: 700;
+  line-height: 1.25;
+  outline: 0;
+  cursor: pointer;
+}
+
+.CookieBanner {
+  margin: 0 -1rem -1rem;
+  max-width: none;
+  background: $darkGrey;
+  color: white;
+  border-radius: 0;
+  padding: 0.5rem 1rem;
+  align-items: flex-start;
+  font-size: 0.875rem;
+  transform: none;
+  transition: none;
+  border: 0;
+
+  a {
+    color: $lightBlue;
+  }
+
+  @include medium {
+    display: flex;
+    justify-content: center;
+  }
+
+  @include multiColumn {
+    position: fixed;
+    z-index: 100;
+    min-width: 80%;
+    margin: 0;
+    bottom: 0;
+    left: 50%;
+    padding: 0.5rem 0.5rem 0.45rem $margin * 2;
+    transform: translate(-50%, 0);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+}
+
+.BannerContent {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+
+  .Button {
+    margin-left: auto;
+  }
+
+  .BannerText {
+    margin: 0 $margin 0 auto;
+  }
+
+  @include medium {
+    align-items: center;
+  }
+}
+
+.BannerText {
+  margin-right: $margin;
+}

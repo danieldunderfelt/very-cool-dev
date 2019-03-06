@@ -1,0 +1,66 @@
+@import 'utils';
+
+.Viewport {
+  width: 100%;
+}
+
+.LayoutWrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding: 1rem;
+  margin: 0 auto;
+
+  @include multiColumn {
+    padding: 0;
+    display: grid;
+    width: calc(#{$multiColumnWidth} - 2rem);
+    grid-template-columns: 1.5fr 3.6fr;
+  }
+
+  @include big {
+    width: 100%;
+    max-width: $containerMaxWidth;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1.75fr 3.6fr;
+  }
+
+  &.TopSpace {
+    margin-top: 0;
+
+    @include multiColumn {
+      margin-top: $margin * 1.5;
+    }
+  }
+}
+
+.Page {
+  background: $articleBackground;
+  padding: $margin $margin 0;
+  margin-top: $margin;
+  margin-bottom: $margin;
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  width: calc(100% + 2rem);
+  margin-left: -1rem;
+
+  @include multiColumn {
+    width: 100%;
+    margin-left: 0;
+    border: 0;
+    box-shadow: -1px 1px 6px 0 rgba(0, 10, 50, 0.075);
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.PageContent {
+}
+
+.FooterLinkList {
+  display: block;
+
+  @include multiColumn {
+    display: none;
+  }
+}

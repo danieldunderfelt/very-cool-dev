@@ -1,0 +1,127 @@
+backend:
+  name:   git-gateway
+  branch: master
+  accept_roles:
+    - admin
+    - editor
+
+site_url:      https://verycool.dev
+media_folder:  static/img
+public_folder: img
+logo_url:      /img/verycooltech_logo.png
+
+collections:
+  - name:             'author'
+    label:            'Author'
+    description:      'Authors writing for this site.'
+    folder:           'authors'
+    create:           true
+    slug:             'author/{{nickname}}'
+    identifier_field: 'email'
+    extension:        'json'
+    format:           'json'
+    editor:
+      preview: false
+    fields:
+      - { name: 'name', label: 'Name', widget: 'string' }
+      - { name: 'nickname', label: 'Nickname', widget: 'string' }
+      - { name: 'role', label: 'Role', widget: 'select', options: ['admin', 'editor', 'writer', 'contributor'] }
+      - { name: 'email', label: 'Email', widget: 'string' }
+      - { name: 'avatar', label: 'Avatar', widget: 'image', allow_multiple: false }
+      - { name: 'bio', label: 'Bio', widget: 'markdown' }
+      - { name: 'twitter_handle', label: 'Twitter handle', widget: 'string' }
+  - name:         'article'
+    label:        'Article'
+    folder:       'src/content/articles'
+    create:       true
+    slug:         '{{year}}-{{month}}-{{day}}-{{slug}}'
+    preview_path: '/article/{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - {
+        label:   'Template Key',
+        name:    'template',
+        widget:  'hidden',
+        default: 'article',
+      }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - {
+        label:    'Cover image',
+        name:     'media_image',
+        widget:   'image',
+        required: false,
+      }
+      - { label: 'Ingress', name: 'ingress', widget: 'markdown', required: false }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - {
+        label:         'Author',
+        name:          'author',
+        widget:        'relation',
+        collection:    'author',
+        valueField:    'email',
+        displayFields: ['name'],
+        searchFields: ['name', 'nickname', 'email', 'role'],
+      }
+      - { label: 'Pinned', name: 'pinned', widget: 'number', valueType: "int", default: 0, min: 0, max: 100, required: false }
+  - name:         'message'
+    label:        'Message'
+    folder:       'src/content/messages'
+    create:       true
+    slug:         '{{slug}}-{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}'
+    preview_path: '/message/{{slug}}-{{year}}{{month}}{{day}}{{hour}}{{minute}}{{second}}'
+    fields:
+      - {
+        label:   'Template Key',
+        name:    'template',
+        widget:  'hidden',
+        default: 'message',
+      }
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - {
+        label:    'Image',
+        name:     'media_image',
+        widget:   'image',
+        required: false,
+      }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Tags', name: 'tags', widget: 'list' }
+      - {
+        label:         'Author',
+        name:          'author',
+        widget:        'relation',
+        collection:    'author',
+        valueField:    'email',
+        displayFields: ['name'],
+        searchFields: ['name', 'nickname', 'email', 'role'],
+      }
+      - { label: 'Pinned', name: 'pinned', widget: 'number', valueType: "int", default: 0, required: false }
+
+  - name:  'page'
+    label: 'Page'
+    files:
+      - file:  'src/content/about.md'
+        label: 'About'
+        name:  'about'
+        fields:
+          - {
+            label:   'Template Key',
+            name:    'template',
+            widget:  'hidden',
+            default: 'page',
+          }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }
+      - file:  'src/content/privacy-policy.md'
+        label: 'Privacy policy'
+        name:  'privacy-policy'
+        fields:
+          - {
+            label:   'Template Key',
+            name:    'template',
+            widget:  'hidden',
+            default: 'page',
+          }
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Body', name: 'body', widget: 'markdown' }

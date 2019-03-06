@@ -1,0 +1,110 @@
+@import 'utils';
+
+.Header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  margin-bottom: -0.5rem;
+
+  @include multiColumn {
+    justify-content: flex-start;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    margin-left: $margin;
+    position: relative;
+  }
+}
+
+.Logo {
+  width: 150px;
+  display: block;
+
+  h1 {
+    display: inline;
+  }
+
+  @include multiColumn {
+    width: 200px;
+    margin-bottom: $margin;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.HeaderContent {
+  max-width: 100%;
+
+  @include multiColumn {
+    position: fixed;
+    max-width: 240px;
+  }
+}
+
+.HeaderLinkList {
+  display: none;
+
+  @include multiColumn {
+    display: block;
+    margin-top: $margin * 2;
+  }
+}
+
+.LinkListHeading {
+  font-size: 0.875rem;
+  color: $blueGrey;
+  text-transform: uppercase;
+}
+
+.LinkList {
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  a {
+    color: $blue;
+    display: inline-flex;
+    align-items: flex-start;
+  }
+
+  svg,
+  img {
+    display: inline-block;
+    width: 1rem;
+    margin-right: 0.75rem;
+    margin-top: 6px;
+  }
+}
+
+.PageList {
+  margin: $margin * 1.25 0 0;
+  padding: $margin * 0.75 0 0;
+  border-top: 1px solid $lightGrey;
+  list-style: none;
+  font-size: 0.875rem;
+
+  li {
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+    color: $blueGrey;
+  }
+
+  a {
+    color: inherit;
+    display: inline-flex;
+    align-items: flex-start;
+  }
+
+  svg,
+  img {
+    display: inline-block;
+    margin-right: 0.75rem;
+    margin-top: 4px;
+  }
+}

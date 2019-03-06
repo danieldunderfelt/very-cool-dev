@@ -1,0 +1,334 @@
+@import 'utils';
+
+.Post {
+  color: $darkGrey;
+  background: $articleBackground;
+  margin-top: $margin;
+  padding: ($margin - 0.5rem) $margin 0;
+  border-radius: 30px;
+  overflow: hidden;
+  transition: transform 0.15s ease-out, box-shadow 0.1s ease-out;
+  border: 1px solid $veryLightGrey;
+  font-size: 101%;
+
+  &:hover {
+    transform: scale(1.015);
+    box-shadow: 5px 5px 30px 0 rgba(0, 10, 50, 0.15);
+    border: 0;
+  }
+
+  .MediaImage {
+    margin-bottom: 0;
+  }
+}
+
+.Message {
+  background: white;
+  margin-top: $margin;
+  border: 1px solid $veryLightGrey;
+  padding: ($margin - 0.25rem) $margin 0.25rem;
+  overflow: hidden;
+  border-radius: 30px;
+  transition: transform 0.2s ease-out, box-shadow 0.125s ease-out;
+
+  &:hover {
+    transform: translate3d(0, 0, 0) scale(1.01);
+    box-shadow: 3px 3px 10px 0 rgba(0, 10, 50, 0.05);
+  }
+
+  .MediaImage {
+    display: block;
+    margin-top: $margin / 1.5;
+    margin-bottom: 0;
+  }
+
+  .ArticleBody {
+    margin: ($margin / 2) 0 ($margin / 1.5);
+  }
+
+  .AuthorDisplay {
+    img {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &.InPostListing {
+    @include multiColumn {
+      max-width: 85%;
+    }
+  }
+
+  &.HighlightedMessage {
+    margin: 0 -1rem $margin;
+    max-width: none;
+    background: $blue;
+    color: white;
+    border-radius: 0;
+    padding: 0.5rem 1rem;
+    align-items: flex-start;
+    font-size: 0.875rem;
+    transform: none;
+    transition: none;
+    border: 0;
+
+    @include medium {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include multiColumn {
+      position: fixed;
+      z-index: 100;
+      width: 100vw;
+      margin: 0;
+      top: 0;
+      left: 0;
+      padding: 0.5rem $margin * 2 0.75rem $margin;
+    }
+
+    @media screen and (min-width: 1500px) {
+      max-width: 1490px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .PostTags {
+      margin-top: 0.1em;
+      margin-right: $margin;
+      color: white;
+      margin-bottom: 0.5rem;
+
+      @include medium {
+        margin-bottom: 0;
+      }
+
+      ul {
+        margin-bottom: 0;
+      }
+    }
+
+    .AuthorDisplay,
+    .MediaImage,
+    .PostMeta {
+      display: none;
+    }
+
+    .ArticleBody {
+      margin: 0;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    a {
+      color: inherit;
+    }
+  }
+}
+
+.NoEffectMessage {
+  &:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.ArticleHeading {
+  margin: ($margin / 1.5) 0 1rem;
+  color: inherit;
+  font-size: rem(48px);
+  font-weight: 400;
+}
+
+.PostLink {
+  text-decoration: none;
+  color: inherit;
+  display: inline;
+  transform: none;
+  transition: none;
+  outline: 0;
+}
+
+.PostTags {
+  font-family: 'IBM Plex Mono', monospace;
+  color: $blue;
+  font-size: rem(16px);
+  font-weight: 300;
+
+  ul {
+    display: flex;
+    margin: 0 0 ($margin / 2);
+    padding: 0;
+  }
+
+  li {
+    list-style: none;
+    margin: 0;
+    text-transform: uppercase;
+
+    &:first-child {
+      font-weight: 700;
+    }
+
+    &:after {
+      content: '/';
+      font-weight: 300;
+      margin: 0 0.25rem;
+    }
+
+    &:last-child {
+      &:after {
+        content: '';
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      display: inline-block;
+    }
+  }
+}
+
+.TimeDisplay {
+  color: $grey;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: rem(14px);
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+
+  @include multiColumn {
+    font-size: rem(16px);
+  }
+
+  svg {
+    margin-right: 0.75rem;
+    margin-bottom: 2px;
+    width: 0.95rem;
+    height: 0.95rem;
+
+    @include medium {
+      width: 1rem;
+      height: 1rem;
+      margin-bottom: -1px;
+    }
+  }
+}
+
+.AuthorDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: rem(16px);
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 400;
+  color: $grey;
+
+  @include multiColumn {
+    font-size: rem(18px);
+  }
+
+  img {
+    display: block;
+    margin-right: 1rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    overflow: hidden;
+
+    @include big {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+  }
+
+  &:hover {
+    transform: none;
+    // TODO: Author hover styles
+  }
+}
+
+.PostMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: ($margin / 2) (-$margin) 1rem;
+  padding: 0.5rem $margin;
+}
+
+.MessageMeta {
+  border-top: 1px solid #dedede;
+  border-bottom: 0;
+  margin-bottom: 0;
+  font-size: rem(14px);
+  margin-top: 0;
+  background: transparent;
+
+  .TimeDisplay {
+    svg {
+      margin-right: 0.5rem;
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+  }
+
+  .PostTags {
+    ul {
+      margin: 0;
+    }
+  }
+}
+
+.MediaImage {
+  display: block;
+  min-width: 100%;
+  margin: 0 (-$margin) $margin;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.ArticlePage {
+  padding-top: 0;
+
+  .PostMeta {
+    background: transparent;
+    border: 0;
+  }
+}
+
+.ArticleBody {
+  color: $textColor;
+  text-align: justify;
+  line-height: 1.4;
+  letter-spacing: 0.005rem;
+  margin: ($margin / 2) 0 $margin;
+
+  p {
+    color: inherit;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin: $margin 0;
+  }
+}
+
+.ArticleIngress {
+  font-size: 1.275rem;
+  font-weight: 300;
+}
+
+.ArticleExcerpt {
+  margin: $margin / 1.5 0;
+}
