@@ -39,6 +39,18 @@ const TemplateWrapper = ({ children, topSpace = false }) => (
           <link
             rel="icon"
             type="image/png"
+            href="/img/favicon-128x128.png?v=1"
+            sizes="128x128"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            href="/img/favicon-64x64.png?v=1"
+            sizes="64x64"
+          />
+          <link
+            rel="icon"
+            type="image/png"
             href="/img/favicon-32x32.png?v=1"
             sizes="32x32"
           />
@@ -58,7 +70,7 @@ const TemplateWrapper = ({ children, topSpace = false }) => (
           <meta property="og:type" content="business.business" />
           <meta property="og:title" content={data.site.siteMetadata.title} />
           <meta property="og:url" content="/" />
-          <meta property="og:image" content="/img/og-image.jpg" />
+          <meta property="og:image" content="/img/og-image.png" />
         </Helmet>
         <div className={styles.Viewport}>
           <div

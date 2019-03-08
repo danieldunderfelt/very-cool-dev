@@ -4,17 +4,14 @@
   color: $darkGrey;
   background: $articleBackground;
   margin-top: $margin;
-  padding: ($margin - 0.5rem) $margin 0;
-  border-radius: 30px;
+  padding: ($margin - 0.25rem) $margin 0;
   overflow: hidden;
   transition: transform 0.15s ease-out, box-shadow 0.1s ease-out;
   border: 1px solid $veryLightGrey;
   font-size: 101%;
 
   &:hover {
-    transform: scale(1.015);
-    box-shadow: 5px 5px 30px 0 rgba(0, 10, 50, 0.15);
-    border: 0;
+    transform: scale(1.01);
   }
 
   .MediaImage {
@@ -23,17 +20,15 @@
 }
 
 .Message {
-  background: white;
+  background: $articleBackground;
   margin-top: $margin;
   border: 1px solid $veryLightGrey;
-  padding: ($margin - 0.25rem) $margin 0.25rem;
+  padding: ($margin - 0.25rem) $margin 0;
   overflow: hidden;
-  border-radius: 30px;
   transition: transform 0.2s ease-out, box-shadow 0.125s ease-out;
 
   &:hover {
     transform: translate3d(0, 0, 0) scale(1.01);
-    box-shadow: 3px 3px 10px 0 rgba(0, 10, 50, 0.05);
   }
 
   .MediaImage {
@@ -141,7 +136,7 @@
   margin: ($margin / 1.5) 0 1rem;
   color: inherit;
   font-size: rem(48px);
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .PostLink {
@@ -154,19 +149,20 @@
 }
 
 .PostTags {
-  font-family: 'IBM Plex Mono', monospace;
   color: $blue;
-  font-size: rem(16px);
+  font-size: 0.875rem;
   font-weight: 300;
 
   ul {
     display: flex;
+    flex-wrap: nowrap;
     margin: 0 0 ($margin / 2);
     padding: 0;
   }
 
   li {
     list-style: none;
+    white-space: nowrap;
     margin: 0;
     text-transform: uppercase;
 
@@ -198,13 +194,14 @@
   color: $grey;
   display: flex;
   align-items: center;
+  white-space: nowrap;
   justify-content: flex-start;
   font-size: rem(14px);
-  font-family: 'IBM Plex Mono', monospace;
   font-weight: 400;
 
   @include multiColumn {
     font-size: rem(16px);
+    white-space: normal;
   }
 
   svg {
@@ -226,7 +223,6 @@
   align-items: center;
   justify-content: flex-start;
   font-size: rem(16px);
-  font-family: 'IBM Plex Mono', monospace;
   font-weight: 400;
   color: $grey;
 
@@ -308,7 +304,7 @@
 
 .ArticleBody {
   color: $textColor;
-  text-align: justify;
+  text-align: left;
   line-height: 1.4;
   letter-spacing: 0.005rem;
   margin: ($margin / 2) 0 $margin;

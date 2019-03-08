@@ -22,12 +22,10 @@ body {
 }
 
 body {
-  background-image: radial-gradient(
-    ellipse at 100% 100%,
-    rgba(150, 110, 255, 0.125) 0%,
-    rgba(116, 157, 237, 0.125) 20%,
-    rgba(177, 220, 237, 0.125) 70%,
-    rgba(187, 145, 255, 0.125) 100%
+  background-image: linear-gradient(
+    to bottom,
+    rgba(149, 236, 255, 0.05) 20%,
+    rgba(84, 151, 216, 0.08) 80%
   );
   background-position: bottom right;
   background-attachment: fixed;

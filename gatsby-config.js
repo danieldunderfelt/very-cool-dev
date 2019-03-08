@@ -23,12 +23,8 @@ module.exports = {
       options: {
         fonts: [
           {
-            family: `Barlow`,
+            family: `Source Code Pro`,
             variants: [`300`, `300i`, `400`, `400i`, `700`, `700i`],
-          },
-          {
-            family: `IBM Plex Mono`,
-            variants: [`300`, `400`, `700`],
           },
         ],
       },
