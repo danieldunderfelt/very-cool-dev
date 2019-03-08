@@ -27,16 +27,16 @@ const LinkList = ({ className }) => {
         </li>
         <li>
           <a
-            href="mailto:editor@verycool.tech"
+            href="mailto:daniel@developsuperpowers.com"
             target="_blank"
             rel="noopener noreferrer">
-            <FiMail /> editor@verycool.tech
+            <FiMail /> daniel@developsuperpowers.com
           </a>
         </li>
       </ul>
       <ul className={styles.PageList}>
         <li>
-          <Link to="/articles/2019-02-13-welcome-to-very-cool/">
+          <Link to="/articles/2019-03-07-welcome-to-very-cool/">
             <FiChevronRight size="18px" /> Introduction post
           </Link>
         </li>
