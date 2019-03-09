@@ -1,13 +1,12 @@
 @import 'utils';
 
 .PostsList {
-  margin-top: $margin;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
 
-  @include medium {
-    margin-top: $margin * 1.25;
+  @include multiColumn {
+    border-right: 1px solid $lightGrey;
   }
 
   > * {
@@ -22,7 +21,13 @@
 .ListHeading {
   font-weight: 400;
   color: $blueGrey;
-  margin-top: $margin * 1.25;
+  margin-top: $margin;
+  margin-bottom: $margin;
+  @include articleWidth;
+
+  + * {
+    border-top: 1px solid $lightGrey;
+  }
 }
 
 .HeadingTag {

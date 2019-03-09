@@ -4,14 +4,15 @@ $fontSize: 18px;
 $mediumFontSize: 16px;
 $smallFontSize: 14px;
 $margin: 1.5rem;
+$sidebarWidth: 25rem;
 
 // Breakpoints
-$mediumWidth: 768px;
+$mediumWidth: 920px;
 $multiColumnWidth: 1024px;
 $bigWidth: 1300px;
 
 // Colors
-$veryLightGrey: #dddddd;
+$veryLightGrey: #f9f9f9;
 $lightGrey: #d0d0d0;
 $grey: #858585;
 $darkGrey: #444444;
@@ -20,6 +21,6 @@ $blue: #4b72ff;
 $lightBlue: #8dacff;
 
 // Color placements
-$dividerColor: $veryLightGrey;
+$dividerColor: $lightGrey;
 $articleBackground: #ffffff;
 $textColor: $darkGrey;

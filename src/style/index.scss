@@ -22,13 +22,7 @@ body {
 }
 
 body {
-  background-image: linear-gradient(
-    to bottom,
-    rgba(149, 236, 255, 0.05) 20%,
-    rgba(84, 151, 216, 0.08) 80%
-  );
-  background-position: bottom right;
-  background-attachment: fixed;
+  background: $veryLightGrey;
   overflow-y: scroll;
 }
 

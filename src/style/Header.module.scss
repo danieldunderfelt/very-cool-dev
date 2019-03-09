@@ -9,9 +9,10 @@
 
   @include multiColumn {
     justify-content: flex-start;
-    margin-top: 1rem;
-    margin-bottom: 0;
-    margin-left: $margin;
+    margin: 0;
+    padding-top: $margin / 2;
+    border-left: 1px solid $lightGrey;
+    border-right: 1px solid $lightGrey;
     position: relative;
   }
 }
@@ -19,6 +20,7 @@
 .Logo {
   width: 150px;
   display: block;
+  margin: 0 auto $margin;
 
   h1 {
     display: inline;
@@ -26,7 +28,6 @@
 
   @include multiColumn {
     width: 200px;
-    margin-bottom: $margin;
   }
 
   img {
@@ -36,11 +37,9 @@
 }
 
 .HeaderContent {
-  max-width: 100%;
-
   @include multiColumn {
     position: fixed;
-    max-width: 300px;
+    width: $sidebarWidth;
   }
 }
 
@@ -57,10 +56,11 @@
   font-size: 0.875rem;
   color: $blueGrey;
   text-transform: uppercase;
+  margin-left: $margin;
 }
 
 .LinkList {
-  padding: 0;
+  padding: 0 $margin;
   list-style: none;
 
   li {
@@ -83,8 +83,8 @@
 }
 
 .PageList {
-  margin: $margin * 1.25 0 0;
-  padding: $margin * 0.75 0 0;
+  margin: $margin * 1.25 0 $margin;
+  padding: $margin * 0.75 $margin 0;
   border-top: 1px solid $lightGrey;
   list-style: none;
   font-size: 0.875rem;

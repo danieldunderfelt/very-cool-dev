@@ -39,15 +39,13 @@ const Message = ({
       <Author author={author} />
       <PostContent content={html} />
       {media_image && <PostMediaImage mediaImage={media_image} />}
-      <div
-        className={classnames(
-          articleStyles.PostMeta,
-          articleStyles.MessageMeta
-        )}>
-        {!highlight && <PostTags tags={tags} renderLink={!isPreview} />}
-        <LinkComponent to={slug}>
-          <TimeDisplay date={date} />
-        </LinkComponent>
+      <div className={articleStyles.MessageMeta}>
+        <div className={articleStyles.MessageMetaContent}>
+          {!highlight && <PostTags tags={tags} renderLink={!isPreview} />}
+          <LinkComponent to={slug}>
+            <TimeDisplay date={date} />
+          </LinkComponent>
+        </div>
       </div>
     </div>
   )

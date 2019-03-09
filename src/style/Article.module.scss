@@ -2,16 +2,20 @@
 
 .Post {
   color: $darkGrey;
-  background: $articleBackground;
   margin-top: $margin;
   padding: ($margin - 0.25rem) $margin 0;
   overflow: hidden;
-  transition: transform 0.15s ease-out, box-shadow 0.1s ease-out;
-  border: 1px solid $veryLightGrey;
+  transition: transform 0.15s ease-out, box-shadow 0.1s ease-out,
+    background 0.1s ease-out, border-radius 0.1s ease-out;
+  border-bottom: 1px solid $dividerColor;
   font-size: 101%;
 
   &:hover {
-    transform: scale(1.01);
+    transform: scale(1.0075);
+    background: lighten($veryLightGrey, 2%);
+    border: 0;
+    border-radius: 10px;
+    box-shadow: -3px 3px 50px rgba(0, 0, 0, 0.1);
   }
 
   .MediaImage {
@@ -20,28 +24,25 @@
 }
 
 .Message {
-  background: $articleBackground;
-  margin-top: $margin;
-  border: 1px solid $veryLightGrey;
+  border-bottom: 1px solid $dividerColor;
   padding: ($margin - 0.25rem) $margin 0;
-  overflow: hidden;
-  transition: transform 0.2s ease-out, box-shadow 0.125s ease-out;
-
-  &:hover {
-    transform: translate3d(0, 0, 0) scale(1.01);
-  }
 
   .MediaImage {
     display: block;
     margin-top: $margin / 1.5;
     margin-bottom: 0;
+    min-width: 0;
+    @include articleWidth;
   }
 
   .ArticleBody {
-    margin: ($margin / 2) 0 ($margin / 1.5);
+    margin-top: ($margin / 2);
+    margin-bottom: ($margin / 2);
   }
 
   .AuthorDisplay {
+    @include articleWidth;
+
     img {
       width: 2rem;
       height: 2rem;
@@ -49,9 +50,6 @@
   }
 
   &.InPostListing {
-    @include multiColumn {
-      max-width: 85%;
-    }
   }
 
   &.HighlightedMessage {
@@ -137,6 +135,7 @@
   color: inherit;
   font-size: rem(48px);
   font-weight: 700;
+  @include articleWidth;
 }
 
 .PostLink {
@@ -152,6 +151,7 @@
   color: $blue;
   font-size: 0.875rem;
   font-weight: 300;
+  @include articleWidth;
 
   ul {
     display: flex;
@@ -255,16 +255,21 @@
   align-items: center;
   justify-content: space-between;
   margin: ($margin / 2) (-$margin) 1rem;
-  padding: 0.5rem $margin;
+  padding: 0.5rem 0;
+  @include articleWidth;
 }
 
 .MessageMeta {
-  border-top: 1px solid #dedede;
   border-bottom: 0;
-  margin-bottom: 0;
   font-size: rem(14px);
-  margin-top: 0;
   background: transparent;
+  max-width: none;
+  margin: 0 (-$margin) 0;
+  padding: 1rem $margin;
+
+  @include multiColumn {
+    padding: 1rem 0;
+  }
 
   .TimeDisplay {
     svg {
@@ -275,10 +280,20 @@
   }
 
   .PostTags {
+    max-width: none;
+    margin: 0;
+
     ul {
       margin: 0;
     }
   }
+}
+
+.MessageMetaContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include articleWidth;
 }
 
 .MediaImage {
@@ -293,21 +308,14 @@
   }
 }
 
-.ArticlePage {
-  padding-top: 0;
-
-  .PostMeta {
-    background: transparent;
-    border: 0;
-  }
-}
-
 .ArticleBody {
   color: $textColor;
   text-align: left;
   line-height: 1.4;
   letter-spacing: 0.005rem;
   margin: ($margin / 2) 0 $margin;
+  font-size: rem(20px);
+  @include articleWidth;
 
   p {
     color: inherit;
@@ -322,9 +330,28 @@
 
 .ArticleIngress {
   font-size: 1.275rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .ArticleExcerpt {
   margin: $margin / 1.5 0;
+}
+
+.ArticlePage {
+  padding-top: 0;
+
+  .PostMeta {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin-top: $margin;
+    margin-bottom: $margin;
+  }
+
+  .ArticleHeading,
+  .ArticleBody,
+  .PostMeta,
+  .PostTags {
+    @include articleWidth;
+  }
 }
