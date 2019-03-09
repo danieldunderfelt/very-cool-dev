@@ -28,4 +28,4 @@ Verycool.dev or any open source library we've used may use your browser's local 
 
 While not yet active, we reserve the right to show ads on verycool.dev in the future. We will update this privacy policy when the time comes, but expect the same privacy-first approach as we took with the web analytics solution.
 
-Contact [admin@verycool.tech](mailto:admin@verycool.tech?subject=Privacy inquiry) if you have questions or concerns about how we handle privacy or the site in general.
+Contact [admin@verycool.dev](mailto:admin@verycool.dev?subject=Privacy inquiry) if you have questions or concerns about how we handle privacy or the site in general.

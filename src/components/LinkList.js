@@ -27,10 +27,10 @@ const LinkList = ({ className }) => {
         </li>
         <li>
           <a
-            href="mailto:daniel@developsuperpowers.com"
+            href="mailto:editor@verycool.dev"
             target="_blank"
             rel="noopener noreferrer">
-            <FiMail /> daniel@developsuperpowers.com
+            <FiMail /> editor@verycool.dev
           </a>
         </li>
       </ul>

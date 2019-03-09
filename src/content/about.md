@@ -2,6 +2,7 @@
 template: page
 title: About verycool.dev
 ---
+
 Verycool.dev is a digital media website created by Daniel Dunderfelt. We publish mostly news and opinion about programming and things related to being a developer.
 
 ### The technology
@@ -12,6 +13,6 @@ For analytics we use the open-source app [Fathom](https://usefathom.com/) instal
 
 ### The people
 
-So far verycool.dev is one person, Daniel Dunderfelt. Hi! I am a freelance web developer and I created this site with the technologies described above. I am looking to expand at some point, so if writing for a tech site sounds fun to you, please contact me at *daniel@developsuperpowers.com*. The site isn't generating any revenue as of writing, but I plan to address that at some point through ads and sponsored content or other more innovative means. (TODO: update this part when that happens. TODO: remove the todo's)
+So far verycool.dev is one person, Daniel Dunderfelt. Hi! I am a freelance web developer and I created this site with the technologies described above. I am looking to expand at some point, so if writing for a tech site sounds fun to you, please contact me at _editor@verycool.dev_. The site isn't generating any revenue as of writing, but I plan to address that at some point through ads and sponsored content or other more innovative means. (TODO: update this part when that happens. TODO: remove the todo's)
 
 What are you still reading the about page for? All the content is on [the front page](/)!
