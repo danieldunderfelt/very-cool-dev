@@ -23,10 +23,11 @@ export const ArticleTemplate = ({
 }) => {
   const PostContent = contentComponent || Content
   const {
-    fields: { author },
     frontmatter: { tags = [], date, title, media_image, ingress = '' },
     html,
   } = post
+
+  const author = get(post, 'fields.author', '')
 
   return (
     <div className={layoutStyles.Page}>

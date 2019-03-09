@@ -5,12 +5,14 @@ import { format } from 'date-fns'
 
 const ArticlePreview = ({ entry, widgetFor }) => {
   const post = {
+    fields: {
+      author: entry.getIn(['data', 'author']),
+    },
     frontmatter: {
       tags: entry.getIn(['data', 'tags']),
       date: format(entry.getIn(['data', 'date']), 'MMMM DD, YYYY'),
       title: entry.getIn(['data', 'title']),
       media_image: entry.getIn(['data', 'media_image']),
-      author: entry.getIn(['data', 'author']),
     },
     html: widgetFor('body'),
   }

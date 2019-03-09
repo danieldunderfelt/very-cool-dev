@@ -9,7 +9,7 @@ tags:
   - verycool
   - launch
   - welcome
-author: daniel@developsuperpowers.com
+author: editor@verycool.dev
 pinned: 0
 ---
 

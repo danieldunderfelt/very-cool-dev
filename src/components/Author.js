@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import kebabCase from 'lodash/kebabCase'
 
 export default function Author({ author }) {
-  const { name, avatar, nickname } = author
+  const { name = author, avatar = '', nickname = '' } = author
 
   return (
     <Link to={`author/${kebabCase(nickname)}`} className={styles.AuthorDisplay}>

@@ -10,10 +10,10 @@ const MessagePreview = ({ entry, widgetFor }) => {
       tags: entry.getIn(['data', 'tags']),
       date: format(entry.getIn(['data', 'date']), 'MMMM DD, YYYY'),
       media_image: entry.getIn(['data', 'media_image']),
-      author: entry.getIn(['data', 'author']),
     },
     fields: {
       slug: '',
+      author: entry.getIn(['data', 'author']),
     },
     html: widgetFor('body'),
   }
