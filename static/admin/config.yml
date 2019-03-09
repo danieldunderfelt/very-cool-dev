@@ -8,7 +8,7 @@ backend:
 site_url:      https://verycool.dev
 media_folder:  static/img
 public_folder: img
-logo_url:      /img/verycooltech_logo.png
+logo_url:      /img/verycooldev_logo.png
 
 collections:
   - name:             'author'
