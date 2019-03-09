@@ -13,6 +13,7 @@ const ArticlePreview = ({ entry, widgetFor }) => {
       date: format(entry.getIn(['data', 'date']), 'MMMM DD, YYYY'),
       title: entry.getIn(['data', 'title']),
       media_image: entry.getIn(['data', 'media_image']),
+      ingress: entry.getIn(['data', 'ingress']),
     },
     html: widgetFor('body'),
   }
