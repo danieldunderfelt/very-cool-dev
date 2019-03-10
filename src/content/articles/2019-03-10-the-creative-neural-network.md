@@ -6,13 +6,7 @@ media_image: /img/gan_part_1_cover.jpg
 ingress: >-
   The terms "machine learning" and "neural networks" are probably familiar to
   you, but have you heard of Generative Adversarial Networks, or GAN for short?
-  Maybe not, as they are a quite recent development, but you may have seen
-  samples of their output. The website [This Person Does Not
-  Exist](https://thispersondoesnotexist.com/) (responsible for the main image of
-  this post) was trending recently, and it shows the cutting edge of what GANs
-  are capable of: creating people from thin air.
-
-
+  You may have seen samples of their output: people that don't exist created from thin air.
   This is, as you can probably tell, VERY COOL, so naturally I wanted to run
   this software myself and maybe make something useful with it. This is part 1
   of my adventures in GAN land.
@@ -23,6 +17,7 @@ tags:
 author: editor@verycool.dev
 pinned: 0
 ---
+
 First, some very short background on myself: I am a web developer mostly doing frontend. Before experimenting with neural networks, I had basically never touched Python, which is the language de jour of the neural network world. Nevertheless I had the crazy idea of taking the code behind [This Person Does Not Exist](https://thispersondoesnotexist.com/) and making it run in Javascript or even the browser, which is a domain I know very well.
 
 That might not be as crazy of an idea as it may first seem (although, spoiler alert: I'm probably not getting that specific GAN implementation to run in the browser), since [Google's Tensorflow](https://www.tensorflow.org/) machine learning library has a Javascript version, [Tensorflow.js](https://www.tensorflow.org/js/). So just take the pretrained model, convert it somehow, and shazam, I have a GAN in my browser! Right? Well...
@@ -37,7 +32,7 @@ My interest is purely in how I can get the code to run and how I can use the res
 
 ### The basics
 
-For our purposes, a "neural network" is a magic black box that takes some input and returns some "intelligent" output. A traditional task is classifying, which consists of looking at a piece of data and determining what it is, like "lamp" or "car". It can even be as simple as true or false. The input is the data you want to classify, and the output is the label that the neural network thinks  applies to it.
+For our purposes, a "neural network" is a magic black box that takes some input and returns some "intelligent" output. A traditional task is classifying, which consists of looking at a piece of data and determining what it is, like "lamp" or "car". It can even be as simple as true or false. The input is the data you want to classify, and the output is the label that the neural network thinks applies to it.
 
 Before being even remotely useful, the network has to be trained. This involves feeding it as much information as you can and telling it outright what label should apply to each piece of data. The result is a trained model that can then be used for the real work of classifying whatever you need to classify.
 
@@ -57,7 +52,7 @@ Frank spends his days counterfeiting images and Tom is hot on his trail trying t
 
 This is essentially the training process. Tom is trained more like a classifier and sharpens his skill by looking at both real images and images made by Frank. Frank, however, is exclusively trained on the fake/real responses from Tom and starts off with random scribbles. Over time, both Frank and Tom get really good at what they do and the tension between these sworn enemies is what enables the GAN to produce such realistic images.
 
-![Simple diagram of the GAN training process](/img/gans-overview.png "GAN training diagram from https://www.lyrn.ai/2018/12/26/a-style-based-generator-architecture-for-generative-adversarial-networks/")
+![Simple diagram of the GAN training process](/img/gans-overview.png 'GAN training diagram from https://www.lyrn.ai/2018/12/26/a-style-based-generator-architecture-for-generative-adversarial-networks/')
 
 There is a conspiracy theory that the government that employs Tom is thoroughly corrupt, since it is actually rooting for Frank to get really good at his job and the police force enjoys no support from the people in charge. Tom actually needs to be hampered in his progress as he would be too good otherwise and the GAN would not produce any output.
 
@@ -69,9 +64,9 @@ Let's look at [This Person Does Not Exist](https://thispersondoesnotexist.com/) 
 
 The code behind TPDNE is a research project by Nvidia that they open-sourced, called [StyleGAN](https://github.com/NVlabs/stylegan). It is, as far as I can tell, the bleeding edge of what GANs are capable of. They've come a long way since 2014, when the GAN was first proposed by [Goodfellow et al](https://arxiv.org/abs/1406.2661). I'm very happy that they open-sourced StyleGAN, since that means I can run it on my machine! But more on that in later parts.
 
-StyleGAN works by incrementally generating the image, starting with a 4x4 pixel blob. It then adds more resolution layer by layer, each layer adding finer detail to the resulting image. The lower resolution layers lay down the basic shapes and the higher resolution layers adds details like hairs and texture.  The layers can also be independent, so detail like skin color or hair style can be added to a basic pose. In this picture from the StyleGAN repo, see how each row is a different "race" while the general pose and even age is the same for the column:
+StyleGAN works by incrementally generating the image, starting with a 4x4 pixel blob. It then adds more resolution layer by layer, each layer adding finer detail to the resulting image. The lower resolution layers lay down the basic shapes and the higher resolution layers adds details like hairs and texture. The layers can also be independent, so detail like skin color or hair style can be added to a basic pose. In this picture from the StyleGAN repo, see how each row is a different "race" while the general pose and even age is the same for the column:
 
-![StyleGAN teaser](/img/stylegan-teaser.png "StyleGAN in action")
+![StyleGAN teaser](/img/stylegan-teaser.png 'StyleGAN in action')
 
 That is very cool if you ask me!
 
