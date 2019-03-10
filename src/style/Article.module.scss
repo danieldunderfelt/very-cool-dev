@@ -23,6 +23,19 @@
   }
 }
 
+.ButtonContainer {
+  @include articleWidth;
+  display: flex;
+  flex-direction: column;
+}
+
+.PostButton {
+  @include Button;
+  display: block;
+  margin: 0 auto $margin;
+  text-transform: uppercase;
+}
+
 .Message {
   border-bottom: 1px solid $dividerColor;
   padding: ($margin - 0.25rem) $margin 0;
@@ -139,18 +152,18 @@
 }
 
 .PostLink {
-  text-decoration: none;
+  text-decoration: none !important;
   color: inherit;
-  display: inline;
-  transform: none;
-  transition: none;
+  display: inline !important;
+  transform: none !important;
+  transition: none !important;
   outline: 0;
 }
 
 .PostTags {
   color: $blue;
   font-size: 0.875rem;
-  font-weight: 300;
+  font-weight: 400;
   @include articleWidth;
 
   ul {
@@ -172,7 +185,7 @@
 
     &:after {
       content: '/';
-      font-weight: 300;
+      font-weight: 400;
       margin: 0 0.25rem;
     }
 

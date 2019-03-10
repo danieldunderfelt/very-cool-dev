@@ -23,9 +23,27 @@
   @return #{$remSize}rem;
 }
 
-
 @mixin articleWidth {
   max-width: 45rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+@mixin Button {
+  background: transparent;
+  border: 3px solid $blue;
+  padding: 0.5rem 1.5rem;
+  font-weight: 700;
+  line-height: 1.25;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 3px;
+  color: $blue;
+  transition: background 0.1s ease-out, border-color 0.2s ease-out, color 0.2s ease-out;
+
+  &:hover {
+    border-color: $lightBlue;
+    background: $lightBlue;
+    color: $textColor;
+  }
 }

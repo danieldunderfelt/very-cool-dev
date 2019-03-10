@@ -30,6 +30,11 @@ class Post extends Component {
             <TimeDisplay date={date} />
           </div>
           <HTMLContent content={articleIngress} />
+          <div className={articleStyles.ButtonContainer}>
+            <Link to={ slug } className={ articleStyles.PostButton }>
+              Read more
+            </Link>
+          </div>
           <PostMediaImage mediaImage={media_image} />
         </Link>
       </div>
