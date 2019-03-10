@@ -1,13 +1,32 @@
 import React from 'react'
 import styles from '../style/Header.module.scss'
 import { Link } from 'gatsby'
-import { FaDiscord, FaTwitter } from 'react-icons/fa'
+import { FaDiscord, FaTwitter, FaMobileAlt, FaUser } from 'react-icons/fa'
 import { FiMail, FiChevronRight } from 'react-icons/fi'
 
 const LinkList = ({ className }) => {
   return (
     <div className={className}>
-      <h5 className={styles.LinkListHeading}>Find VERYCOOL on</h5>
+      <h5 className={styles.LinkListHeading}>More VERYCOOL</h5>
+      <ul className={ styles.LinkList }>
+        <li>
+          <a
+            href="https://verycool.tech"
+            target="_blank"
+            rel="noopener noreferrer">
+            <FaMobileAlt /> verycool.tech
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://danieldunderfelt.com"
+            target="_blank"
+            rel="noopener noreferrer">
+            <FaUser /> danieldunderfelt.com
+          </a>
+        </li>
+      </ul>
+      <h5 className={styles.LinkListHeading}>Find VERYCOOL.dev on</h5>
       <ul className={styles.LinkList}>
         <li>
           <a
