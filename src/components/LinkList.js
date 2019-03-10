@@ -7,7 +7,7 @@ import { FiMail, FiChevronRight } from 'react-icons/fi'
 const LinkList = ({ className }) => {
   return (
     <div className={className}>
-      <h5 className={styles.LinkListHeading}>More VERYCOOL</h5>
+      <h5 className={styles.LinkListHeading}>More VERYCOOL blogs</h5>
       <ul className={ styles.LinkList }>
         <li>
           <a
