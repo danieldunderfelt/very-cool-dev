@@ -14,9 +14,10 @@
     padding: 0;
     display: grid;
     width: 100%;
-    max-width: 2560px;
+    max-width: 1920px;
     margin: 0 auto;
     grid-template-columns: $sidebarWidth 1fr;
+    border-right: 1px solid $lightGrey;
   }
 
   @include big {

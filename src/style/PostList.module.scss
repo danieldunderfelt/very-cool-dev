@@ -4,25 +4,13 @@
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
-
-  @include multiColumn {
-    border-right: 1px solid $lightGrey;
-  }
-
-  > * {
-    margin: 0 0 $margin;
-
-    &:first-child {
-      margin-top: 0;
-    }
-  }
 }
 
 .ListHeading {
   font-weight: 400;
   color: $blueGrey;
   margin-top: $margin;
-  margin-bottom: $margin;
+  margin-bottom: $margin * 1.25;
   @include articleWidth;
 
   + * {

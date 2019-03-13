@@ -23,6 +23,11 @@ body {
 
 body {
   background: $veryLightGrey;
+  background-image: radial-gradient(
+    ellipse at 0 0,
+    var(--veryLightGrey) 50%,
+    rgba(51, 230, 255, 0.1) 100%
+  );
   overflow-y: scroll;
 }
 
